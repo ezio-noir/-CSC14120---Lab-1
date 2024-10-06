@@ -27,7 +27,7 @@ sizes=(
 for size in "${sizes[@]}"; do
     IFS=',' read -r size_x size_y <<< "$size"
     echo -e "\n\n>>>> Running on block size $size_x x $size_y <<<<"
-    output=$("$exec" "$input_file" output.pnm "$target_file" "$size_x" "$size_y")
+    output=$("$exec" "$input_file" out2.pnm "$target_file" "$size_x" "$size_y")
     exit_val=$?
     printf "%s\n" "$output"
     if [[ $exit_val -eq 0 ]]; then
